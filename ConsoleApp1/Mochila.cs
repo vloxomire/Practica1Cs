@@ -1,14 +1,18 @@
 ﻿using ItemShop;
 using System;
 
-namespace ItemsShop
+namespace ItemShop
 {
     class Mochila
     {
         Items[] mochila;
-        public Mochila(int tam, ITEMS tipo)
+        public Mochila(int tam)
         {
             mochila = new Items[tam];
+            for (int i = 0; i < mochila.Length; i++)
+            {
+                mochila[i] = null;
+            }
         }
         public bool ComprobarEspacioMochila()
         {

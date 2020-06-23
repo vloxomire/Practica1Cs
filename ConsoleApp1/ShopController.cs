@@ -66,6 +66,21 @@ namespace ItemShop
             return tipoObj;
         }
 
+        public int SeleccionarItem(Items[] inventario) 
+        {
+
+            return 0;
+        }
+        public void ComprarItem(Player player,bool lugar) 
+        {
+            if (player.GetOro() < 0 && lugar==true) 
+            {
+                Console.WriteLine("Necesita oro para poder comprar");
+                break;
+            }
+            else if(mochila.Compr)
+            
+        }
     }
 }
 
