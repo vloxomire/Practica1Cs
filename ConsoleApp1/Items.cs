@@ -1,34 +1,53 @@
 ﻿using System;
-enum ITEMS { pocion, arma, armadura };
-class Items
+namespace ItemShop 
+{
+    enum ITEMS { pocion, arma, armadura,empty };
+    class Items
     {
-    ITEMS items;
-    string nombre;
-    int costo;
+        private ITEMS tipoItems;
+        private string nombre;
+        private int costo;
 
-    public void GenerarItem()
-    {
-        nombre = " ";
-        var rand = new Random();
-
-        costo = rand.Next(100);
-        items = (ITEMS)rand.Next(2);
-
-        switch (items)
+        public void SetNombre(string nombre)
         {
-            case ITEMS.pocion:
-                nombre = "vida";
-                break;
-            case ITEMS.arma:
-                nombre = "espada";
-                break;
-            case ITEMS.armadura:
-                nombre = "escudo";
-                break;
-            default:
-                break;
+            this.nombre = nombre;
+
         }
-        Console.Write(items + nombre + costo);
+
+        public void SetCosto(int costo)
+        {
+            this.costo = costo;
+        }
+
+        public void SetItems(ITEMS items)
+        {
+            this.tipoItems = items;
+        }
+        public void VerItem()
+        {
+            Console.WriteLine("El item {0} de tipo {1} con coste {2}$", DameTipoNombre(tipoItems), nombre   , costo);
+        }
+
+        private static string DameTipoNombre(ITEMS it)
+        {
+            string nombre;
+
+            switch (it)
+            {
+                case ITEMS.pocion:
+                    nombre = "POCIONES";
+                    break;
+                case ITEMS.arma:
+                    nombre = "ARMAS";
+                    break;
+                case ITEMS.armadura:
+                    nombre = "ARMADURA";
+                    break;
+                default:
+                    nombre = "ITEM";
+                    break;
+            }
+            return nombre;
+        }
     }
 }
-
