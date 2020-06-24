@@ -31,9 +31,17 @@ namespace ItemShop
             Console.Clear();
             for (int i = 0; i < inventario.Length; i++)
             {
-                Console.Write(contador+") ");
-                inventario[i].VerItem();
-                contador++;
+                if (inventario[i] == null)
+                {
+                    Console.WriteLine("Null");
+                    contador++;
+                }
+                else
+                {
+                    Console.Write(contador + ") ");
+                    inventario[i].VerItem();
+                    contador++;
+                }
             }
             Console.ReadLine();
         }
@@ -76,27 +84,17 @@ namespace ItemShop
 
             return 0;
         }
-        public void ComprarItem(Items[] mochi,int oro) 
+        public void ComprarItem(Items[] mochi,int pos) 
         {
             int indiceCompra;
-            Console.WriteLine("Que objeto desea comprar esccriba su indice numero)");
+            Console.WriteLine("Que objeto desea comprar escriba su indice");
             indiceCompra = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("El indice elegido es {0}", indiceCompra);
-            Console.Beep();
-            Console.ReadKey();
-            for (int i = 0; i < mochi.Length; i++)
-            {
-                if (mochi[i] == null)
-                {
-                    mochi[i]=inventario[i];
-                    Console.WriteLine("Se guardo en la mochila");
-                    mochila.VerMochila();
-                }
-                else 
-                {
 
-                }
-            }
+            mochi[pos]=inventario[indiceCompra];
+            inventario[indiceCompra] = null;
+            mochila.VerMochila(mochi);
+            MostrarInventario();
         }
     }
 }

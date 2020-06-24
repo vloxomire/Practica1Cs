@@ -8,16 +8,24 @@ namespace ItemShop
         {
             const short TAM = 5;
             ShopController controller = new ShopController();
-            PlayerController player = new PlayerController();
+            PlayerController playerControl = new PlayerController();
             Mochila mochila = new Mochila();
-            bool disponible;
-            Items[] mochil=new Items [5];
+            int espacio;
+            Player player = new Player();
+            Items[] mochil=new Items [TAM];
 
-            player.PlayerInicio();
+            playerControl.PlayerInicio();
             controller.InicializarInventario(TAM);
             controller.MostrarInventario();
-            disponible=mochila.ComprobarEspacioMochila();
-            controller.ComprarItem(disponible);
+            //Ciclo Menu
+            do
+            {
+                espacio = mochila.ComprobarEspacioMochila(mochil);
+                controller.ComprarItem(mochil, espacio);
+                Console.Clear();
+            } while (espacio<TAM);
+            
+            
         }
     }
 

@@ -23,7 +23,7 @@ namespace ItemShop
 
         public void OroInicial()
         {
-                player.SetOro(random.Next(1, 250));
+            player.SetOro(random.Next(1, 250));
         }
 
         public void MostrarDatosPlayer()

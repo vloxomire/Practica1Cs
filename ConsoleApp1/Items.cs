@@ -19,9 +19,9 @@ namespace ItemShop
             this.costo = costo;
         }
 
-        public void SetItems(ITEMS items)
+        public void SetItems(ITEMS item)
         {
-            this.tipoItems = items;
+            this.tipoItems = item;
         }
         public void VerItem()
         {
