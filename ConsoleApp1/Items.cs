@@ -1,7 +1,7 @@
 ﻿using System;
 namespace ItemShop 
 {
-    enum ITEMS { pocion, arma, armadura,empty };
+    enum ITEMS { pocion, arma, armadura };
     class Items
     {
         private ITEMS tipoItems;

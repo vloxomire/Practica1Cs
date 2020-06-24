@@ -1,18 +1,24 @@
 ﻿using ItemShop;
 using System;
+using System.Dynamic;
 
 namespace ItemShop
 {
     class Mochila
     {
         Items[] mochila;
-        public Mochila(int tam)
+        //Constructor
+        public Mochila()
         {
-            mochila = new Items[tam];
+            mochila = new Items[5];
             for (int i = 0; i < mochila.Length; i++)
             {
                 mochila[i] = null;
             }
+        }
+        public Items GetMochila() 
+        {
+            return mochila[];
         }
         public bool ComprobarEspacioMochila()
         {
@@ -30,9 +36,9 @@ namespace ItemShop
             }
             return lugarDisponible;
         }
-        public void VerMochila(int t)
+        public void VerMochila()
         {
-            mochila = new Items[t];
+            mochila = new Items[5];
             for (int i = 0; i < mochila.Length; i++)
             {
                 Console.WriteLine(mochila[i]);

@@ -7,28 +7,33 @@ namespace ItemShop
         static string[] armasNombres = { "espada","hacha","martillo"};
         static string[] armadurasNombres = {"cuero","malla","placas"};
         static string[] pocionesNombres = { "vida","defensa","ataque"};
-        Items[] objetos;
+        Items[] inventario;
+        Mochila mochila;
 
         Random random;
 
         public void InicializarInventario(short t)
         {
 
-            objetos = new Items[t];
+            inventario = new Items[t];
             random = new Random();
+            mochila = new Mochila();
 
-            for (int i = 0; i < objetos.Length; i++)
+            for (int i = 0; i < inventario.Length; i++)
             {
-                objetos[i] =GeneradorItems();
+                inventario[i] =GeneradorItems();
             }
         }
 
         public void MostrarInventario()
         {
+            short contador=0;
             Console.Clear();
-            for (int i = 0; i < objetos.Length; i++)
+            for (int i = 0; i < inventario.Length; i++)
             {
-                objetos[i].VerItem();
+                Console.Write(contador+") ");
+                inventario[i].VerItem();
+                contador++;
             }
             Console.ReadLine();
         }
@@ -71,15 +76,27 @@ namespace ItemShop
 
             return 0;
         }
-        public void ComprarItem(Player player,bool lugar) 
+        public void ComprarItem(Items[] mochi,int oro) 
         {
-            if (player.GetOro() < 0 && lugar==true) 
+            int indiceCompra;
+            Console.WriteLine("Que objeto desea comprar esccriba su indice numero)");
+            indiceCompra = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("El indice elegido es {0}", indiceCompra);
+            Console.Beep();
+            Console.ReadKey();
+            for (int i = 0; i < mochi.Length; i++)
             {
-                Console.WriteLine("Necesita oro para poder comprar");
-                break;
+                if (mochi[i] == null)
+                {
+                    mochi[i]=inventario[i];
+                    Console.WriteLine("Se guardo en la mochila");
+                    mochila.VerMochila();
+                }
+                else 
+                {
+
+                }
             }
-            else if(mochila.Compr)
-            
         }
     }
 }

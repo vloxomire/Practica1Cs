@@ -1,5 +1,4 @@
-﻿using ItemShop;
-using System;
+﻿using System;
 namespace ItemShop
 {
     class PlayerController
@@ -10,7 +9,7 @@ namespace ItemShop
         public void PlayerInicio()
         {
             Console.WriteLine(DateTime.Now);
-            NombrePlayer();
+            //NombrePlayer();
             OroInicial();
             MostrarDatosPlayer();
             Console.ReadLine();
@@ -24,7 +23,7 @@ namespace ItemShop
 
         public void OroInicial()
         {
-            player.SetOro(random.Next(1, 250));
+                player.SetOro(random.Next(1, 250));
         }
 
         public void MostrarDatosPlayer()
