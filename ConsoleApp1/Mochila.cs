@@ -64,6 +64,7 @@ namespace ItemShop
                     Console.WriteLine(i + ") Vacio");
                 }
             }
+            Console.ReadLine();
         }
 
     }

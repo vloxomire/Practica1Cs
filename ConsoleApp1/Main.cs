@@ -11,19 +11,25 @@ namespace ItemShop
             PlayerController playerControl = new PlayerController();
             Mochila mochila = new Mochila();
             int espacio;
+            char salir;
             Player player = new Player();
             Items[] mochil=new Items [TAM];
 
             playerControl.PlayerInicio();
             controller.InicializarInventario(TAM);
-            controller.MostrarInventario();
+            
             //Ciclo Menu
             do
             {
+                controller.MostrarInventario();
                 espacio = mochila.ComprobarEspacioMochila(mochil);
                 controller.ComprarItem(mochil, espacio);
-                Console.Clear();
-            } while (espacio<TAM);
+                Console.WriteLine(("").PadRight(24, '-'));
+                mochila.VerMochila(mochil);
+                Console.WriteLine("Desea salir del menu de compra?");
+                Console.WriteLine("y/n");
+                salir = Convert.ToChar(Console.ReadLine());
+            } while (salir=='n');
             
             
         }

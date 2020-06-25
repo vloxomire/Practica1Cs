@@ -43,7 +43,7 @@ namespace ItemShop
                     contador++;
                 }
             }
-            Console.ReadLine();
+            //Console.ReadLine();
         }
 
         private Items GeneradorItems()
@@ -79,22 +79,17 @@ namespace ItemShop
             return tipoObj;
         }
 
-        public int SeleccionarItem(Items[] inventario) 
-        {
-
-            return 0;
-        }
         public void ComprarItem(Items[] mochi,int pos) 
         {
+            //Comprar item (al comprarse se borra del arreglo y se genera uno nuevo en su posiciòn)
+
             int indiceCompra;
             Console.WriteLine("Que objeto desea comprar escriba su indice");
             indiceCompra = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("El indice elegido es {0}", indiceCompra);
 
             mochi[pos]=inventario[indiceCompra];
-            inventario[indiceCompra] = null;
-            mochila.VerMochila(mochi);
-            MostrarInventario();
+            inventario[indiceCompra] = GeneradorItems();
         }
     }
 }
