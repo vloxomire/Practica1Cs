@@ -16,9 +16,9 @@ namespace ItemShop
         {
             this.nombre = nom;
         }
-        public void SetOro(int or) 
+        public void SetOro(int oro) 
         {
-            this.oro = or;
+            this.oro = oro;
         }
         public string GetNombre() 
         {

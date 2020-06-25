@@ -4,26 +4,29 @@ namespace ItemShop
 {
     class Program
     {
+        
         static void Main(string[] args)
         {
             const short TAM = 5;
             ShopController controller = new ShopController();
             PlayerController playerControl = new PlayerController();
             Mochila mochila = new Mochila();
-            int espacio;
+            bool hayEspacioMain;
             char salir;
             Player player = new Player();
             Items[] mochil=new Items [TAM];
 
-            playerControl.PlayerInicio();
+         
+            int oroMain=playerControl.PlayerInicio();
             controller.InicializarInventario(TAM);
             
             //Ciclo Menu
             do
             {
                 controller.MostrarInventario();
-                espacio = mochila.ComprobarEspacioMochila(mochil);
-                controller.ComprarItem(mochil, espacio);
+                hayEspacioMain = mochila.ComprobarEspacioMochila(mochil);//resive el true del metodo
+                /*Usar variable local para traer el get del oro al iniciar y usara esa pq cuando llama al metodo get no esta o setear por referencia*/
+                controller.ComprarItem(mochil, hayEspacioMain,oroMain);
                 Console.WriteLine(("").PadRight(24, '-'));
                 mochila.VerMochila(mochil);
                 Console.WriteLine("Desea salir del menu de compra?");

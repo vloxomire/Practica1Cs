@@ -7,15 +7,17 @@ namespace ItemShop
         private Items i;
         private const short TAM = 5;
         private Items[] mochila;
+        private bool hayEspacio;
         //Constructor
         public Mochila()
         {
             mochila = new Items[TAM];
-
             for (int i = 0; i < mochila.Length; i++)
             {
                 mochila[i] = null;
             }
+
+            hayEspacio = false;
         }
         //Indexador
         public Items this[int posicion]
@@ -29,8 +31,23 @@ namespace ItemShop
                 return mochila[posicion];
                 }
         }
-
-        public int ComprobarEspacioMochila(Items[] a)
+        public void VerMochila(Items[] m)
+        {
+            for (int i = 0; i < m.Length; i++)
+            {
+                if (m[i] != null)
+                {
+                    Console.Write(i + ") ");
+                    m[i].VerItem();
+                }
+                else
+                {
+                    Console.WriteLine(i + ") Vacio");
+                }
+            }
+            Console.ReadLine();
+        }
+        public bool ComprobarEspacioMochila(Items[] a)
         {
             //Usar un booleano que retorne true
             int lugarDisponible=0;
@@ -39,33 +56,27 @@ namespace ItemShop
                 if (a[i] == null)
                 {
                     lugarDisponible = i;
-                    Console.WriteLine("Hay lugar disponible en la posicion:{0}",i);
+                    hayEspacio = true;
+                    //Console.WriteLine("Hay lugar disponible en la posicion:{0}",i);
                     break;
                 }
                 else
                 {
-                    Console.WriteLine("No hay lugar disponible");
+                    //Console.WriteLine("No hay lugar disponible");
+                    hayEspacio = false;
                 }
             }
-            return lugarDisponible;
-        }
-
-        public void VerMochila(Items[] m)
-        {
-            for (int i = 0; i < m.Length; i++)
+            //Pregunta por el var booleana
+            if (!hayEspacio)
             {
-                if (m[i] != null)
-                {
-                    Console.Write(i + ") ");
-                        m[i].VerItem();
-                }
-                else 
-                {
-                    Console.WriteLine(i + ") Vacio");
-                }
+                Console.WriteLine("La mochila esta llena");
+                VerMochila(mochila);
             }
-            Console.ReadLine();
+            else 
+            {
+                Console.WriteLine("Hay espacio en la mochila");
+            }
+            return hayEspacio;
         }
-
     }
 }

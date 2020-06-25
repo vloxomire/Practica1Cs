@@ -18,6 +18,10 @@ namespace ItemShop
         {
             this.costo = costo;
         }
+        public int GetCosto() 
+        {
+            return costo;
+        }
 
         public void SetItems(ITEMS item)
         {

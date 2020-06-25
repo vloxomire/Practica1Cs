@@ -5,15 +5,21 @@ namespace ItemShop
     {
         Random random = new Random();
         Player player = new Player();
+        int oroPlayerController;
+        public PlayerController() 
+        {
+            this.oroPlayerController =0;
+        }
 
-        public void PlayerInicio()
+        public int PlayerInicio()
         {
             Console.WriteLine(DateTime.Now);
             //NombrePlayer();
             OroInicial();
+            oroPlayerController=player.GetOro();
             MostrarDatosPlayer();
             Console.ReadLine();
-
+            return oroPlayerController;
         }
         public void NombrePlayer()
         {
@@ -23,13 +29,14 @@ namespace ItemShop
 
         public void OroInicial()
         {
-            player.SetOro(random.Next(1, 250));
+            player.SetOro(random.Next(100, 500));
+            Console.WriteLine("El player tiene {0} oro", player.GetOro());
         }
 
         public void MostrarDatosPlayer()
         {
             Console.WriteLine(("").PadRight(24, '-'));
-            Console.WriteLine("{0} tiene {1} oro", player.GetNombre(), player.GetOro());
+            Console.WriteLine("{0}", player.GetNombre());
         }
 
         public void ComprarItem(int oro, bool disponible, int pos)
