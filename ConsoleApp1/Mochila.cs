@@ -4,10 +4,11 @@ namespace ItemShop
 {
     class Mochila
     {
-        private Items i;
+        private Items itemM;
         private const short TAM = 5;
         private Items[] mochila;
         private bool hayEspacio;
+        private short espacio;
         //Constructor
         public Mochila()
         {
@@ -18,6 +19,7 @@ namespace ItemShop
             }
 
             hayEspacio = false;
+            espacio = 0;
         }
         //Indexador
         public Items this[int posicion]
@@ -47,17 +49,17 @@ namespace ItemShop
             }
             Console.ReadLine();
         }
-        public bool ComprobarEspacioMochila(Items[] a)
+        public bool ComprobarEspacioMochila(Items[] a,ref short lugarDisponible)
         {
+            string aux;
             //Usar un booleano que retorne true
-            int lugarDisponible=0;
-            for (int i = 0; i < a.Length; i++)
+            for (short i = 0; i < a.Length; i++)
             {
                 if (a[i] == null)
                 {
                     lugarDisponible = i;
                     hayEspacio = true;
-                    //Console.WriteLine("Hay lugar disponible en la posicion:{0}",i);
+                    Console.Write("[{0}] ",i);
                     break;
                 }
                 else
@@ -78,5 +80,6 @@ namespace ItemShop
             }
             return hayEspacio;
         }
+
     }
 }

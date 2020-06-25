@@ -83,31 +83,49 @@ namespace ItemShop
             /*tenemos una nueva funciòn en el ShopController que nos permite indicarle un
             tipo de Item y mostrar la lista filtrada.*/
         }
-        public void ComprarItem(Items[] mochi,bool hECI,int oro)
+        public int ComprarItem(Items[] mochi,bool hayEspacioCI,int oroSC,short lugarDisponibleCI)
         {
             /*Comprar ahora items depende del oro de nuestro jugador y de los espacios de la
             mochila.Debemos actualizar sus valores correctamente luego de hacer los chequeos necesarios.*/
-
+            bool pobre = false;
             int indiceCompra;
-            Console.WriteLine("Que objeto desea comprar escriba su indice");
-            indiceCompra = Convert.ToInt32(Console.ReadLine());
+            do 
+            {
+                Console.WriteLine("Que objeto desea comprar escriba su indice");
+                indiceCompra = Convert.ToInt32(Console.ReadLine());
+            } while(indiceCompra >mochi.Length && indiceCompra <0);
+            //ERROR ,cuando quiero evitar q se le mande un enter,igual explota.
             Console.WriteLine("El indice elegido es {0}", indiceCompra);
+
             //Factura tipo A
             Console.WriteLine(("").PadRight(24, '*'));
             Console.WriteLine($"Coste:\t{inventario[indiceCompra].GetCosto(),8:c}");
-            Console.WriteLine($"Oro:\t{oro,8:c}");
+            Console.WriteLine($"Oro:\t{oroSC,8:c}");
             Console.WriteLine(("").PadRight(24, '-'));
-            Console.WriteLine($"Oro Restante:\t{oro- inventario[indiceCompra].GetCosto(),8:c}");
+            Console.WriteLine($"Oro Restante:\t{oroSC-inventario[indiceCompra].GetCosto(),8:c}");
+            //si costo supera el valor del oro no se puede hacer la transaccio y un mensaje
+            if (inventario[indiceCompra].GetCosto() > oroSC)
+            {
+                Console.WriteLine("NO TIENE SUFICIENTE ORO, le falta {0}$"
+                    , inventario[indiceCompra].GetCosto() - oroSC);
+                pobre = true;
+            }
+            else 
+            {
+                oroSC = oroSC - inventario[indiceCompra].GetCosto();
+                Console.WriteLine("FELICITACIONES POR LA COMPRA");
+                Console.WriteLine("el remito se le enviara a su mail");
+                pobre = false;
+            }
             Console.WriteLine(("").PadRight(24, '*'));
 
             //Si el oro da negativo dice no lo puede comprar, si da saldo positivo o 0 lo comprar
-
-            if (hECI==true && oro >= inventario[indiceCompra].GetCosto()) //Pregunta por oro y espacio
+            if (hayEspacioCI==true && !pobre) //Pregunta por oro y espacio
             {
-                /*mochi[pos] = inventario[indiceCompra];
-                inventario[indiceCompra] = GeneradorItems();*/
+                mochi[lugarDisponibleCI] = inventario[indiceCompra];
+                inventario[indiceCompra] = GeneradorItems();
             }
-            
+            return oroSC;
         }
     }
 }

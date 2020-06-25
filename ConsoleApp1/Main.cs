@@ -13,6 +13,7 @@ namespace ItemShop
             Mochila mochila = new Mochila();
             bool hayEspacioMain;
             char salir;
+            short lugarDisponibleMain=0;
             Player player = new Player();
             Items[] mochil=new Items [TAM];
 
@@ -24,9 +25,10 @@ namespace ItemShop
             do
             {
                 controller.MostrarInventario();
-                hayEspacioMain = mochila.ComprobarEspacioMochila(mochil);//resive el true del metodo
+                //Hay espacio tiene que ser por referencia para poder mandar posicion
+                hayEspacioMain = mochila.ComprobarEspacioMochila(mochil,ref lugarDisponibleMain);//resive el true del metodo
                 /*Usar variable local para traer el get del oro al iniciar y usara esa pq cuando llama al metodo get no esta o setear por referencia*/
-                controller.ComprarItem(mochil, hayEspacioMain,oroMain);
+                oroMain=controller.ComprarItem(mochil, hayEspacioMain,oroMain,lugarDisponibleMain);
                 Console.WriteLine(("").PadRight(24, '-'));
                 mochila.VerMochila(mochil);
                 Console.WriteLine("Desea salir del menu de compra?");
