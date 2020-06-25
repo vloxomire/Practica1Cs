@@ -25,6 +25,7 @@ namespace ItemShop
             do
             {
                 controller.MostrarInventario();
+                controller.FiltroShop();
                 //Hay espacio tiene que ser por referencia para poder mandar posicion
                 hayEspacioMain = mochila.ComprobarEspacioMochila(mochil,ref lugarDisponibleMain);//resive el true del metodo
                 /*Usar variable local para traer el get del oro al iniciar y usara esa pq cuando llama al metodo get no esta o setear por referencia*/

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+
 namespace ItemShop
 {
     class ShopController
@@ -21,7 +23,7 @@ namespace ItemShop
 
             for (int i = 0; i < inventario.Length; i++)
             {
-                inventario[i] = GeneradorItems();
+                this.inventario[i] = GeneradorItems();
             }
         }
 
@@ -80,8 +82,38 @@ namespace ItemShop
         }
         public void FiltroShop() 
         {
+            int aux = 0;
             /*tenemos una nueva funciòn en el ShopController que nos permite indicarle un
             tipo de Item y mostrar la lista filtrada.*/
+            //Tomar y Convertir
+            Console.Write("Que tipo de item desea filtar:");
+            Console.WriteLine("(0)pocion, (1)arma, (2)armadura");
+            aux=Convert.ToInt32(Console.ReadLine());
+            ITEMS it=(ITEMS)aux;
+            //filtrar
+            for (int i = 0; i < inventario.Length; i++)
+            {
+                /*ERROR:NO puedo llamar a la funcion gettype,no se si
+                tomar valores de los indices o mostrar los indices*/
+                if (it == inventario[i].GetItems()) 
+                {
+                    Console.Write("{0})",i);
+                    switch (it)
+                    {
+                        case ITEMS.pocion:
+                            inventario[i].VerItem();
+                            break;
+                        case ITEMS.arma:
+                            inventario[i].VerItem();
+                            break;
+                        case ITEMS.armadura:
+                            inventario[i].VerItem();
+                            break;
+                        default:
+                            break;
+                    }
+                }   
+            }
         }
         public int ComprarItem(Items[] mochi,bool hayEspacioCI,int oroSC,short lugarDisponibleCI)
         {

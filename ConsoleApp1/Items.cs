@@ -27,6 +27,10 @@ namespace ItemShop
         {
             this.tipoItems = item;
         }
+        public ITEMS GetItems() 
+        {
+            return tipoItems;
+        }
         public void VerItem()
         {
             Console.WriteLine("El item {0} de tipo {1} con coste {2}$", DameTipoNombre(tipoItems), nombre   , costo);
