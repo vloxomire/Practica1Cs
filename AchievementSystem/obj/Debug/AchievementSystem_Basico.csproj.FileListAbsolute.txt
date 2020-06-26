@@ -1,0 +1,7 @@
+C:\0-Cursos\C#\Practica1Cs\AchievementSystem\bin\Debug\AchievementSystem.exe.config
+C:\0-Cursos\C#\Practica1Cs\AchievementSystem\bin\Debug\AchievementSystem.exe
+C:\0-Cursos\C#\Practica1Cs\AchievementSystem\bin\Debug\AchievementSystem.pdb
+C:\0-Cursos\C#\Practica1Cs\AchievementSystem\obj\Debug\AchievementSystem_Basico.csprojAssemblyReference.cache
+C:\0-Cursos\C#\Practica1Cs\AchievementSystem\obj\Debug\AchievementSystem_Basico.csproj.CoreCompileInputs.cache
+C:\0-Cursos\C#\Practica1Cs\AchievementSystem\obj\Debug\AchievementSystem.exe
+C:\0-Cursos\C#\Practica1Cs\AchievementSystem\obj\Debug\AchievementSystem.pdb
