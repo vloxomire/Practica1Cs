@@ -25,11 +25,14 @@ namespace AchievementSystem
             this.recompensa="";
             this.status="";
         }
-        /*● Ver logros (mostrando un listado, con la información de cada logro)
-            ● Completar logro, enviando un ID y viendo si coincide.*/
+    
         public void VerLogros() 
         {
-
+            /*● Ver logros (mostrando un listado, con la información de cada logro)*/
         }
+        public void CompletarLogro() 
+        {
+            /*● Completar logro, enviando un ID y viendo si coincide.*/
     }
+}
 }
