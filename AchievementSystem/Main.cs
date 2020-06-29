@@ -8,6 +8,8 @@ namespace AchievementSystem
             AchievementController achCont = new AchievementController(); ;
             achCont.LLenarArray();
             achCont.MostrarArrayLogros();
+            achCont.CompletarLogro(2);
+
         }
     }
 }

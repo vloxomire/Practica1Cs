@@ -104,12 +104,9 @@ namespace AchievementSystem
             }
             this.recompensa = recompensa;
         }
-        public void SetStatus(short log) 
+        public void SetStatus(bool status) 
         {
-            if (log >= 0) 
-            {
-                this.status = true;
-            }
+            this.status = status;
         }
         public void VerLogros()
         {
@@ -124,7 +121,7 @@ namespace AchievementSystem
             SetTitulo((Logros)id);
             SetDescripcion(id);
             SetRecompensa(id);
-            SetStatus(id);
+            SetStatus(false);
         }
     }
 }

@@ -19,14 +19,16 @@ namespace AchievementSystem
        
         public void CompletarLogro(short id) 
         {
-           /* for (int i = 0; i < logrosArray.Length; i++)
+            /*maando un id recorro el aarray de obj, veo si coincide el ide entonces le paso true*/
+            for (short i = 0; i < arrayLogros.Length; i++)
             {
-                //el Array tendria q ser de objetos asi podria comprarr el id
-                //if (id == logrosArray[i].)
+                if (arrayLogros[i].GetId() == id)
                 {
-
+                    arrayLogros[i].SetStatus(true);
+                    Console.WriteLine("Se a completado el siguente logro {0}", arrayLogros[i].GetTitulo());
+                    arrayLogros[i].VerLogros();
                 }
-            }*/
+            }
         }
         public Achievement GeneradorLogros() 
         {
@@ -38,7 +40,6 @@ namespace AchievementSystem
             ach.SetId(logNum);
             ach.SetDescripcion(logNum);
             ach.SetRecompensa(logNum);
-            ach.SetStatus(logNum);
             return ach;
         }
         public void MostrarArrayLogros() 
@@ -55,12 +56,9 @@ namespace AchievementSystem
             {
                 arrayLogros[i]=new Achievement();
             }
-            
             for (short i = 0; i < arrayLogros.Length; i++)
             {
-                
                 arrayLogros[i].InicializarLogros(i);
-                
             }
         }
     }
