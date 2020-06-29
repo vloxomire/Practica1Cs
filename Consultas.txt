@@ -1,0 +1,2 @@
+Buscar si los getter retornan un this.variable.//Solo los setter usan this
+BUscar esa libreria ? q agrupa metodos esta en una de las "clases"
