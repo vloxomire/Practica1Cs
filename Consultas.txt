@@ -1,2 +1,3 @@
 Buscar si los getter retornan un this.variable.//Solo los setter usan this
-BUscar esa libreria ? q agrupa metodos esta en una de las "clases"
+BUscar esa libreria ? q agrupa metodos esta en una de las "clases"//region#
+Me devuelve id incorrecto como mensaje pausar y ver donde esta la falla?

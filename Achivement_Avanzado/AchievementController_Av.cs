@@ -6,12 +6,12 @@ namespace AchievementSystem
     {
         const short indice=3;
         Achievement[] arrayLogros;
-        short pasos;
+        private int botin;
         //Constructor
         public AchievementController() 
         {
             arrayLogros = new Achievement[indice];
-            this.pasos = 0;
+            this.botin = 0;
         }
        
         public void CompletarLogro(int id) 
@@ -24,6 +24,7 @@ namespace AchievementSystem
                     arrayLogros[i].SetStatus(true);
                     Console.WriteLine("Se a completado el siguente logro {0}", arrayLogros[i].GetTitulo());
                     arrayLogros[i].VerLogros();
+                    this.botin=botin+arrayLogros[i].GetRecompensa();
                 }
                 else
                 {
@@ -67,29 +68,33 @@ namespace AchievementSystem
         {
             /*enviando una ID, tendremos que ir
             avanzando los pasos y preguntar de forma interna en la clase Achievement si está
-            completo
+            completo y preguntar si me pase de los pasos
             Aumenta en 1*/
             for (short i = 0; i < arrayLogros.Length; i++)
             {
-                if (arrayLogros[i].GetId()==id)
+                if (arrayLogros[i].GetId() == id)
                 {
-
-                    arrayLogros[i].SetContador(pasos);
-                    CompletarLogro(id);
+                    //Pregunto si ya esta completo o me paso de los pasos
+                    if (arrayLogros[i].GetTotal() == arrayLogros[i].GetContador())
+                    {
+                        Console.WriteLine("El logro ya esta completo");
+                        break;
+                    }
+                    else 
+                    {
+                        if (pasos>arrayLogros[i].GetTotal())
+                        {
+                            pasos = arrayLogros[i].GetTotal();
+                        }
+                        arrayLogros[i].SetContador(pasos);
+                        CompletarLogro(id);
+                    }
                 }
             }
         }
-        /*public int QuePasos(int id) 
+        public int GetBotin() 
         {
-            this.pasos++;
-            for (int i = 0; i < arrayLogros.Length; i++)
-            {
-                if (arrayLogros[i].GetId()==id)
-                {
-                    arrayLogros[i].SetContador(pasos);
-                }
-            }
-            return pasos;
-        }*/
+            return botin;
+        }
     }
 }

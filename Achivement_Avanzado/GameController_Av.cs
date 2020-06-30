@@ -16,13 +16,25 @@ namespace AchievementSystem
             this.id = 0;
             this.pasos = 0;
         }
-        public void Inicializar() 
+        public void Inicializar()
         {
-            Console.WriteLine("Elija el id para el logro");
-            id=Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Elija la cantidad de \"pasos\" para el logro");
-            pasos = Convert.ToInt32(Console.ReadLine());
-            controller.AvanzarLogros(id,pasos);//recibe un id
+            int salir=1;
+            controller.LLenarArray();
+            do
+            {
+                controller.MostrarArrayLogros();
+                Console.WriteLine("Elija el id para el logro");
+                id = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Elija la cantidad de \"pasos\" para el logro");
+                pasos = Convert.ToInt32(Console.ReadLine());
+                controller.AvanzarLogros(id, pasos);//recibe un id
+                Console.WriteLine("Dinero actual {0}$",controller.GetBotin());
+                Console.WriteLine("Desea salir marque 0 sino marque cualquier otro numero");
+                salir = Convert.ToInt32(Console.ReadLine());
+
+                Console.Clear();
+            } while (salir!=0);
+            
         }
         
 
