@@ -36,9 +36,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Achievement.cs" />
-    <Compile Include="AchievementController.cs" />
-    <Compile Include="Main.cs" />
+    <Compile Include="Achievement_Av.cs" />
+    <Compile Include="AchievementController_Av.cs" />
+    <Compile Include="GameController_Av.cs" />
+    <Compile Include="Main_Av.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

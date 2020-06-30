@@ -14,7 +14,7 @@ namespace AchievementSystem
             this.pasos = 0;
         }
        
-        public void CompletarLogro(short id) 
+        public void CompletarLogro(int id) 
         {
             /*maando un id recorro el aarray de obj, veo si coincide el ide entonces le paso true*/
             for (short i = 0; i < arrayLogros.Length; i++)
@@ -63,23 +63,23 @@ namespace AchievementSystem
                 arrayLogros[i].InicializarLogros(i);
             }
         }
-        public void AvanzarLogros(short id)
+        public void AvanzarLogros(int id,int pasos)
         {
             /*enviando una ID, tendremos que ir
             avanzando los pasos y preguntar de forma interna en la clase Achievement si está
             completo
             Aumenta en 1*/
-            short pasos=QuePasos(id);
             for (short i = 0; i < arrayLogros.Length; i++)
             {
                 if (arrayLogros[i].GetId()==id)
                 {
+
                     arrayLogros[i].SetContador(pasos);
                     CompletarLogro(id);
                 }
             }
         }
-        public short QuePasos(short id) 
+        /*public int QuePasos(int id) 
         {
             this.pasos++;
             for (int i = 0; i < arrayLogros.Length; i++)
@@ -90,6 +90,6 @@ namespace AchievementSystem
                 }
             }
             return pasos;
-        }
+        }*/
     }
 }

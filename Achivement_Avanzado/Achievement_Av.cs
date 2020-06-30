@@ -5,13 +5,13 @@ namespace AchievementSystem
 {
     class Achievement
     {
-        private short id;
+        private int id;
         private string titulo;
         private string descripcion;
-        private short recompensa;
+        private int recompensa;
         private bool status;
-        private short contador;
-        private short total;
+        private int contador;
+        private int total;
         //Constructor
         public Achievement() 
         {
@@ -24,7 +24,7 @@ namespace AchievementSystem
             this.total=0;
     }
         //Getter
-        public  short GetId() 
+        public  int GetId() 
         {
             return id;
         }
@@ -36,7 +36,7 @@ namespace AchievementSystem
         {
             return descripcion;
         }
-        public short GetRecompensa() 
+        public int GetRecompensa() 
         {
             return recompensa;
         }
@@ -44,15 +44,15 @@ namespace AchievementSystem
         {
             return status;
         }
-        public short GetContador()
+        public int GetContador()
         {
             return contador;
         }
-        public short GetTotal()
+        public int GetTotal()
         {
             return total;
         }
-        public void SetId(short id) 
+        public void SetId(int id) 
         {
             this.id=id;
         }
@@ -76,7 +76,7 @@ namespace AchievementSystem
             }
             this.titulo = titu;
         }
-        public void SetDescripcion(short id) 
+        public void SetDescripcion(int id) 
         {
             string descripcion;
             switch (id)
@@ -96,9 +96,9 @@ namespace AchievementSystem
             }
             this.descripcion = descripcion;
         }
-        public void SetRecompensa(short id) 
+        public void SetRecompensa(int id) 
         {
-            short recompensa;
+            int recompensa;
              switch (id)
             {
                 case 0:
@@ -120,11 +120,11 @@ namespace AchievementSystem
         {
             this.status = status;
         }
-        public void SetContador(short contador)
+        public void SetContador(int contador)
         {
             this.contador = contador;
         }
-        public void SetTotal(short id)
+        public void SetTotal(int id)
         {
             short total = 0;
             switch (id)
@@ -151,7 +151,7 @@ namespace AchievementSystem
             Console.Write(("").PadRight(30,'*'));
             Console.ReadLine();
         }
-        public void InicializarLogros(short id) 
+        public void InicializarLogros(int id) 
         {
             SetId(id);
             SetTitulo((Logros)id);
