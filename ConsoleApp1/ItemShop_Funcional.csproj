@@ -43,12 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Items.cs" />
-    <Compile Include="Mochila.cs" />
-    <Compile Include="Player.cs" />
-    <Compile Include="PlayerController.cs" />
-    <Compile Include="ShopController.cs" />
-    <Compile Include="Main.cs" />
+    <Compile Include="Items_Fc.cs" />
+    <Compile Include="Mochila_Fc.cs" />
+    <Compile Include="Player_Fc.cs" />
+    <Compile Include="PlayerController_Fc.cs" />
+    <Compile Include="ShopController_Fc.cs" />
+    <Compile Include="Main_Fc.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

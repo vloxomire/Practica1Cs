@@ -1,0 +1,7 @@
+C:\0-Cursos\C#\Practica1Cs\ItemShop_Avanzado\bin\Debug\ItemShop_Avanzado.exe.config
+C:\0-Cursos\C#\Practica1Cs\ItemShop_Avanzado\bin\Debug\ItemShop_Avanzado.exe
+C:\0-Cursos\C#\Practica1Cs\ItemShop_Avanzado\bin\Debug\ItemShop_Avanzado.pdb
+C:\0-Cursos\C#\Practica1Cs\ItemShop_Avanzado\obj\Debug\ItemShop_Avanzado.csprojAssemblyReference.cache
+C:\0-Cursos\C#\Practica1Cs\ItemShop_Avanzado\obj\Debug\ItemShop_Avanzado.csproj.CoreCompileInputs.cache
+C:\0-Cursos\C#\Practica1Cs\ItemShop_Avanzado\obj\Debug\ItemShop_Avanzado.exe
+C:\0-Cursos\C#\Practica1Cs\ItemShop_Avanzado\obj\Debug\ItemShop_Avanzado.pdb

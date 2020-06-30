@@ -1,10 +1,8 @@
 ﻿using System;
-
 namespace ItemShop 
 {
     class Program
-    {
-        
+    {  
         static void Main(string[] args)
         {
             const short TAM = 5;
@@ -36,9 +34,6 @@ namespace ItemShop
                 Console.WriteLine("y/n");
                 salir = Convert.ToChar(Console.ReadLine());
             } while (salir=='n');
-            
-            
         }
     }
-
 }

@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C0F299F9-1D95-41DF-95C3-E26D353F2972}</ProjectGuid>
+    <ProjectGuid>{AF86A182-1FBD-4A6A-9451-3165B27554D4}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>AchivementSystem_Avanzado</RootNamespace>
-    <AssemblyName>AchivementSystem_Avanzado</AssemblyName>
+    <RootNamespace>ItemShop_Avanzado</RootNamespace>
+    <AssemblyName>ItemShop_Avanzado</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -36,9 +36,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Achievement_Fc.cs" />
-    <Compile Include="AchievementController_Fc.cs" />
-    <Compile Include="Main_Fc.cs" />
+    <Compile Include="GameController_Av.cs" />
+    <Compile Include="Items.cs" />
+    <Compile Include="Main_Av.cs" />
+    <Compile Include="Mochila_Av.cs" />
+    <Compile Include="Player_Av.cs" />
+    <Compile Include="PlayerController_Av.cs" />
+    <Compile Include="ShopController_Av.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
